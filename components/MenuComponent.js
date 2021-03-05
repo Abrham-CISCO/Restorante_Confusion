@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, FlatList} from 'react-native';
 import {ListItem} from 'react-native-elements';
 
@@ -9,11 +9,12 @@ function Menu(props){
                 key={index}
                 title ={item.name}
                 subtitle= {item.description}
-                hudeChevron={true}
+                hideChevron={true}
+                onPress={() => props.onPress(item.id)}
                 leftAvatar={{source: require('./images/uthappizza.png')}}
                 />
-        )
-    }
+        );
+    };
 
     return(
     <FlatList data={props.dishes}
